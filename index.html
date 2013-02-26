@@ -1,60 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Cilkplus.github.com by cilkplus</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Slate is a responsive theme for GitHub Pages" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cilk Plus/LLVM</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Cilkplus.github.com</h1>
-        <p></p>
 
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/cilkplus?tab=repositories">View on GitHub</a>
 
-        <p class="view"><a href="https://github.com/cilkplus">View My GitHub Profile</a></p>
+          <h1 id="project_title">Cilk Plus/LLVM</h1>
+          <h2 id="project_tagline">An implementation of the Intel® Cilk™ Plus C/C++ language extensions in LLVM</h2>
 
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+          <section id="downloads">
+            <a class="nav_link" href="#try">Try it!</a>
+            <a class="nav_link" href="#status">Status</a>
+            <a class="nav_link" href="#license">License</a>
+            <a class="nav_link" href="#contact">Contact</a>
+          <!--
+            <a class="zip_download_link" href="#">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="#">Download this project as a tar.gz file</a>
+          -->
+          </section>
+        </header>
+    </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+<p>Intel® Cilk™ Plus is an extension to the C and C++ languages to support data and task parallelism.  It is the easiest, quickest way to harness the power of both multicore and vector processing.  Visit <a href="http://cilkplus.org">cilkplus.org</a> for details.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>This project implements the Intel® Cilk™ Plus language extensions in the <a href="http://clang.llvm.org">Clang</a> frontend for <a href="http://llvm.org">LLVM</a>.  The commercial version of Cilk Plus is available as part of the <a href="http://software.intel.com/en-us/intel-composer-xe/">Intel® C++ Composer XE compiler</a>.  There is also an open source version available in the "cilkplus" branch of the GCC C/C++ compiler.  More information is available on <a href="http://cilkplus.org/which-license">cilkplus.org</a>.</p>
+
+<p><a name="try"></a></p>
+
+<h1>Try Cilk Plus/LLVM</h1>
+
+<p><em>Note: Cilk Plus/LLVM does not yet support all of the Intel® Cilk™ Plus extensions.  See <a href="#status">Status</a>.</em></p>
+
+<h3>Requirements</h3>
+
+<p>Most software and hardware requirements are the same as for <a href="http://llvm.org/docs/GettingStarted.html#requirements">LLVM</a>.  However, support is currently limited to 64 bit Linux and Mac OS X - see <a href="#status">status</a> for details on supported configurations and known issues.</p>
+
+<p>CMake version 2.8.8 or greater is required to compile compiler-rt.</p>
+
+<h3>Getting the source code</h3>
+
+<pre><code>$ git clone -b cilkplus https://github.com/cilkplus/llvm
+$ git clone -b cilkplus https://github.com/cilkplus/clang llvm/tools/clang
+$ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/compiler-rt
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>The source code structure follows Clang/LLVM: <a href="http://llvm.org/docs/GettingStarted.html">http://llvm.org/docs/GettingStarted.html</a>.</p>
 
-<h3>Designer Templates</h3>
+<h3>Building</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Currently, only CMake-based building is supported.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: <a href="http://llvm.org/docs/CMake.html">http://llvm.org/docs/CMake.html</a>.  In the following command, make sure to replace /install/prefix and /path/to/llvm with appropriate paths.</p>
 
-<h3>Rather Drive Stick?</h3>
+<pre><code>$ cd llvm
+$ mkdir build &amp;&amp; cd build
+$ cmake -DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
+        -DLLVM_TARGETS_TO_BUILD=X86 ..
+$ make &amp;&amp; make install
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><em>Mac OS X</em></p>
 
-<h3>Authors and Contributors</h3>
+<p>The basic steps are the same as above.  However, on Max OS X it is recommanded to build with the Clang compiler shipped with the OS.  Add the following definitions to the cmake command above.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<pre><code>-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+</code></pre>
 
-<h3>Support or Contact</h3>
+<h3>Using</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>To use the newly installed compiler, add the following to your environment.  On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH.</p>
+
+<pre><code>export PATH=$PATH:/install/prefix/bin
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/install/prefix/include
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/install/prefix/include
+export LIBRARY_PATH=$LIBRARY_PATH:/install/prefix/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/install/prefix/lib
+</code></pre>
+
+<p>When you build a program that uses Intel® Cilk™ Plus extensions, add the following options to enable Cilk Plus support and link to the runtime library.</p>
+
+<pre><code>-fcilkplus -lcilkrts
+</code></pre>
+
+<h3>A simple program</h3>
+
+<pre><code>#include &lt;cilk/cilk.h&gt;
+#include &lt;assert.h&gt;
+
+int fib(int n) {
+  if (n &lt; 2)
+    return 1;
+  int a = cilk_spawn fib(n-1);
+  int b = fib(n-2);
+  cilk_sync;
+  return a + b;
+}
+
+int main() {
+  int result = fib(30);
+  assert(result == 1346269);
+  return 0;
+} 
+</code></pre>
+
+<p>Confirm that the compiler is working correctly by saving the above code code to a file.</p>
+
+<pre><code>$ clang -fcilkplus test.c -o test -lcilkrts
+$ ./test
+</code></pre>
+
+<p>You can check that the code is executing in parallel by using the time command and CILK_NWORKERS environment variable to control the number of workers.</p>
+
+<pre><code>$ CILK_NWORKERS=1 time ./test
+$ CILK_NWORKERS=2 time ./test
+$ CILK_NWORKERS=4 time ./test
+</code></pre>
+
+<p><a name="status"></a></p>
+
+<h1>Status</h1>
+
+<h3>What works right now</h3>
+
+<table>
+<tr>
+<th>Feature</th>
+<th align="center">Supported?</th>
+</tr>
+<tr>
+<td>cilk_spawn, cilk_sync</td>
+<td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>hyperobjects</td>
+<td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
+</tr>
+<tr>
+<td>cilk_for</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>#pragma simd</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>elemental functions</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>array notation</td>
+<td align="center"></td>
+</tr>
+</table><h3>Supported platforms</h3>
+
+<p>OS: Linux or Mac OS X<br>
+Architecture: x86-64</p>
+
+<h3>Known issues</h3>
+
+<ul>
+<li>In C++, initializing a variable from a spawn that may throw an exception does not work yet. E.g.</li>
+</ul><pre><code>_Cilk_spawn may_throw(); // OK
+Foo f = _Cilk_spawn may_throw(); // not working yet
+Foo f = _Cilk_spawn will_not_throw(); // OK
+</code></pre>
+
+<ul>
+<li><p>There appear to be edge-cases in exception handling that do not work correctly, particularly with nested spawns.</p></li>
+<li><p>Using variable-length arrays in a spawning function does not work yet.</p></li>
+</ul><p><a name="license"></a></p>
+
+<h1>License</h1>
+
+<p>LLVM, Clang, and Compiler-rt are distributed under LLVM's <a href="http://llvm.org/docs/DeveloperPolicy.html#license">"UIUC" BSD-Style license</a>.  For details, including information about third-party components, see LICENSE.txt in the code repositories.</p>
+
+<p>The Intel® Cilk™ Plus runtime library is distributed under a <a href="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause license</a>.</p>
+
+<p><a name="contact"></a></p>
+
+<h1>Contact</h1>
+
+<p>If you would like to report a bug, or make a feature request, you can submit an issue in Github <a href="https://github.com/cilkplus/clang/issues">here</a>.</p>
+
+<p>You can also contact us via the the <a href="http://software.intel.com/en-us/forums/intel-cilk-plus/">Intel Cilk Plus forum</a> on the Intel Developer Zone.</p>      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">© 2012-2013 Intel Corporation. <a href="http://software.intel.com/en-us/articles/optimization-notice">Optimization Notice</a>
+        <br />Intel and Cilk are trademarks of Intel Corporation in the U.S. and/or other countries.</p>
+        <p>Slate theme maintained by <a href="https://github.com/jsncostello">Jason Costello</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
   </body>
 </html>
