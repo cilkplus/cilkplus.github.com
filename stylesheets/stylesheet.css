@@ -393,7 +393,6 @@ Small Device Styles
 
   code, pre {
     white-space: pre-wrap;
-    min-width: 320px;
     max-width: 480px;
     font-size: 11px;
   }
