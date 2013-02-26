@@ -132,7 +132,6 @@ Foo f = _Cilk_spawn will_not_throw(); // OK
 ```
 
 * There appear to be edge-cases in exception handling that do not work correctly, particularly with nested spawns.
-
 * Using variable-length arrays in a spawning function does not work yet.
 
 <a name="license"></a>
