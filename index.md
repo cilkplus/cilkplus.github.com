@@ -27,7 +27,7 @@ The source code structure follows Clang/LLVM: http://llvm.org/docs/GettingStarte
 
 ### Building
 
-Currently, only CMake-based building is supported.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: http://llvm.org/docs/CMake.html.  In the following command, make sure to replace /install/prefix and /path/to/llvm with appropriate paths.
+Currently, only CMake-based building is supported.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: http://llvm.org/docs/CMake.html.  In the following command, make sure to replace `/install/prefix` with the location where you would like to install the binaries.
 
 ```
 $ cd llvm
