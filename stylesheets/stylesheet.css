@@ -142,14 +142,15 @@ pre, code {
 pre {
   width: 100%;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  box-shadow: 0 0 3px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
   overflow: auto;
+  margin-bottom: 20px;
 }
 
 code {
   padding: 3px;
   margin: 0 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 pre code {
