@@ -104,10 +104,6 @@ p {
   margin: 10px 0 15px 0;
 }
 
-footer p {
-  color: #f2f2f2;
-}
-
 a {
   text-decoration: none;
   color: #007edf;
@@ -343,6 +339,7 @@ Full-Width Styles
 
 #footer_wrap {
   background: #212121;
+  color: #f2f2f2;
 }
 
 /*******************************************************************************
