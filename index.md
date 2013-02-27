@@ -1,6 +1,6 @@
-Intel® Cilk™ Plus is an extension to the C and C++ languages to support data and task parallelism.  It is the easiest, quickest way to harness the power of both multicore and vector processing.  Visit [cilkplus.org](http://cilkplus.org) for details.
+Intel® Cilk™ Plus is an extension to the C and C++ languages to support data and task parallelism.  It is one of the easiest, quickest way to harness the power of both multicore and vector processing.  Visit [cilkplus.org](http://cilkplus.org) for details.
 
-This project implements the Intel® Cilk™ Plus language extensions in the [Clang](http://clang.llvm.org) frontend for [LLVM](http://llvm.org).  The commercial version of Cilk Plus is available as part of the [Intel® C++ Composer XE compiler](http://software.intel.com/en-us/intel-composer-xe/).  There is also an open source version available in the "cilkplus" branch of the GCC C/C++ compiler.  More information is available on [cilkplus.org](http://cilkplus.org/which-license).
+This project implements the Intel® Cilk™ Plus language extensions in the [Clang](http://clang.llvm.org) frontend for [LLVM](http://llvm.org).  There are two other implementations available.  A commercial version of Cilk Plus is available as part of the [Intel® C++ Composer XE compiler](http://software.intel.com/en-us/intel-composer-xe/).  There is also an open source version available in the "cilkplus" branch of the GCC C/C++ compiler.  More information is available on [cilkplus.org](http://cilkplus.org/which-license).
 
 
 <a name="try"></a>
