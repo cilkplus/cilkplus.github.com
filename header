@@ -22,6 +22,7 @@
           <div id="downloads">
             <a class="nav_link" href="#try">Try it!</a>
             <a class="nav_link" href="#status">Status</a>
+            <a class="nav_link" href="https://github.com/cilkplus/clang/wiki/Porting-to-other-architectures">Porting</a>
             <a class="nav_link" href="#license">License</a>
             <a class="nav_link" href="#contact">Contact</a>
           </div>

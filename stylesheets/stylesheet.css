@@ -279,8 +279,7 @@ Full-Width Styles
 }
 
 #downloads {
-  position: absolute;
-  width: 400px;
+  float: right;
   z-index: 10;
   bottom: -40px;
   right: 0;

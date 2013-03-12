@@ -2,6 +2,9 @@ Intel® Cilk™ Plus is an extension to the C and C++ languages to support data 
 
 This project implements the Intel® Cilk™ Plus language extensions in the [Clang](http://clang.llvm.org) frontend for [LLVM](http://llvm.org).  There are two other implementations available.  A commercial version of Cilk Plus is available as part of the [Intel® C++ Composer XE compiler](http://software.intel.com/en-us/intel-composer-xe/).  There is also an open source version available in the "cilkplus" branch of the GCC C/C++ compiler.  More information is available on [cilkplus.org](http://cilkplus.org/which-license).
 
+News
+====
+March 3, 2013 - Added link to porting Cilk Plus/LLVM to other architectures and operating systems.
 
 <a name="try"></a>
 Try Cilk Plus/LLVM
