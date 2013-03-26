@@ -17,7 +17,7 @@ _Note: Cilk Plus/LLVM does not yet support all of the Intel® Cilk™ Plus exten
 
 Most software and hardware requirements are the same as for [LLVM](http://llvm.org/docs/GettingStarted.html#requirements).  However, support is currently limited to 64 bit Linux and Mac OS X - see [status](#status) for details on supported configurations and known issues.
 
-CMake version 2.8.8 or greater is required to compile compiler-rt.
+CMake version 2.8.8 or greater is required to compile compiler-rt when using the recommended build process. Alternatively, it is also possible to use configure/make.
 
 ### Getting the source code
 
