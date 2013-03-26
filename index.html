@@ -38,7 +38,8 @@
 
 <h1>News</h1>
 
-<p>March 3, 2013 - Added link to porting Cilk Plus/LLVM to other architectures and operating systems.</p>
+<p>March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers has been resolved.<br>
+March 3, 2013 - Added link to porting Cilk Plus/LLVM to other architectures and operating systems.</p>
 
 <p><a name="try"></a></p>
 
@@ -63,7 +64,7 @@ $ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/co
 
 <h3>Building</h3>
 
-<p>Currently, only CMake-based building is supported.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: <a href="http://llvm.org/docs/CMake.html">http://llvm.org/docs/CMake.html</a>.  In the following command, make sure to replace <code>/install/prefix</code> with the location where you would like to install the binaries.</p>
+<p>The recommended way to build Cilk Plus/LLVM is using CMake.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: <a href="http://llvm.org/docs/CMake.html">http://llvm.org/docs/CMake.html</a>.  In the following command, make sure to replace <code>/install/prefix</code> with the location where you would like to install the binaries.</p>
 
 <pre><code>$ cd llvm
 $ mkdir build &amp;&amp; cd build
@@ -170,13 +171,6 @@ $ CILK_NWORKERS=4 time ./test
 Architecture: x86-64</p>
 
 <h3>Known issues</h3>
-
-<ul>
-<li>In C++, initializing a variable from a spawn that may throw an exception does not work yet. E.g.</li>
-</ul><pre><code>_Cilk_spawn may_throw(); // OK
-Foo f = _Cilk_spawn may_throw(); // not working yet
-Foo f = _Cilk_spawn will_not_throw(); // OK
-</code></pre>
 
 <ul>
 <li>There appear to be edge-cases in exception handling that do not work correctly, particularly with nested spawns.</li>

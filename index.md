@@ -4,6 +4,7 @@ This project implements the Intel® Cilk™ Plus language extensions in the [Cla
 
 News
 ====
+March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers has been resolved.
 March 3, 2013 - Added link to porting Cilk Plus/LLVM to other architectures and operating systems.
 
 <a name="try"></a>
@@ -30,7 +31,7 @@ The source code structure follows Clang/LLVM: http://llvm.org/docs/GettingStarte
 
 ### Building
 
-Currently, only CMake-based building is supported.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: http://llvm.org/docs/CMake.html.  In the following command, make sure to replace `/install/prefix` with the location where you would like to install the binaries.
+The recommended way to build Cilk Plus/LLVM is using CMake.  Detailed instructions on how to build Clang/LLVM/Compiler-rt with CMake can be found in the following page: http://llvm.org/docs/CMake.html.  In the following command, make sure to replace `/install/prefix` with the location where you would like to install the binaries.
 
 ```
 $ cd llvm
@@ -125,14 +126,6 @@ OS: Linux or Mac OS X
 Architecture: x86-64
 
 ### Known issues
-
-* In C++, initializing a variable from a spawn that may throw an exception does not work yet. E.g.
-
-```
-_Cilk_spawn may_throw(); // OK
-Foo f = _Cilk_spawn may_throw(); // not working yet
-Foo f = _Cilk_spawn will_not_throw(); // OK
-```
 
 * There appear to be edge-cases in exception handling that do not work correctly, particularly with nested spawns.
 * Using variable-length arrays in a spawning function does not work yet.
