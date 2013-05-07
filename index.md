@@ -4,8 +4,8 @@ This project implements the Intel® Cilk™ Plus language extensions in the [Cla
 
 News
 ====
-March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers has been resolved.
-March 3, 2013 - Added link to porting Cilk Plus/LLVM to other architectures and operating systems.
+May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the [latest version](http://cilkplus.org/download#runtime-sources).
+March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.
 
 <a name="try"></a>
 Try Cilk Plus/LLVM
@@ -114,8 +114,8 @@ Status
 |  Feature                | Supported?    |
 |-------------------------|:-------------:|
 | cilk\_spawn, cilk\_sync | ![check]      |
+| cilk\_for               | ![check]      |
 | hyperobjects            | ![check]      |
-| cilk\_for               |               | 
 | #pragma simd            |               | 
 | elemental functions     |               | 
 | array notation          |               | 
