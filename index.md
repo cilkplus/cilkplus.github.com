@@ -74,7 +74,7 @@ When you build a program that uses Intel® Cilk™ Plus extensions, add the foll
 
 int fib(int n) {
   if (n < 2)
-    return 1;
+    return n;
   int a = cilk_spawn fib(n-1);
   int b = fib(n-2);
   cilk_sync;
@@ -83,7 +83,7 @@ int fib(int n) {
 
 int main() {
   int result = fib(30);
-  assert(result == 1346269);
+  assert(result == 832040);
   return 0;
 } 
 ```

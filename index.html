@@ -103,7 +103,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/install/prefix/lib
 
 int fib(int n) {
   if (n &lt; 2)
-    return 1;
+    return n;
   int a = cilk_spawn fib(n-1);
   int b = fib(n-2);
   cilk_sync;
@@ -112,7 +112,7 @@ int fib(int n) {
 
 int main() {
   int result = fib(30);
-  assert(result == 1346269);
+  assert(result == 832040);
   return 0;
 } 
 </code></pre>
