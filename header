@@ -7,6 +7,18 @@
     <meta name="description" content="This project implements the Intel Cilk Plus language extensions in the Clang frontend for LLVM">
 
     <title>Cilk Plus/LLVM</title>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17808594-5']);
+      _gaq.push(['_setDomainName', 'cilkplus.github.org']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
   </head>
 
   <body>
