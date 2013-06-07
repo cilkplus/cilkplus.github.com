@@ -50,7 +50,8 @@
 
 <h1>News</h1>
 
-<p>May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the <a href="http://cilkplus.org/download#runtime-sources">latest version</a>.<br>
+<p>June 7, 2013 - All known exception handling issues have been resolved.<br>
+May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the <a href="http://cilkplus.org/download#runtime-sources">latest version</a>.<br>
 March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.</p>
 
 <p><a name="try"></a></p>
@@ -185,7 +186,6 @@ Architecture: x86-64</p>
 <h3>Known issues</h3>
 
 <ul>
-<li>There appear to be edge-cases in exception handling that do not work correctly, particularly with nested spawns.</li>
 <li>Using variable-length arrays in a spawning function does not work yet.</li>
 </ul><p><a name="license"></a></p>
 
