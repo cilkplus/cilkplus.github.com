@@ -55,11 +55,11 @@ The basic steps are the same as above.  However, on Max OS X it is recommanded t
 To use the newly installed compiler, add the following to your environment.  On Mac OS X, replace LD_LIBRARY_PATH with DYLD_LIBRARY_PATH.
 
 ```
-export PATH=$PATH:/install/prefix/bin
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:/install/prefix/include
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/install/prefix/include
-export LIBRARY_PATH=$LIBRARY_PATH:/install/prefix/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/install/prefix/lib
+export PATH=/install/prefix/bin:$PATH
+export C_INCLUDE_PATH=/install/prefix/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/install/prefix/include:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=/install/prefix/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/install/prefix/lib:$LD_LIBRARY_PATH
 ```
 
 When you build a program that uses Intel® Cilk™ Plus extensions, add the following options to enable Cilk Plus support and link to the runtime library.
