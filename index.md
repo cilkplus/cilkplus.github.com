@@ -5,7 +5,7 @@ This project implements the Intel® Cilk™ Plus language extensions in the [Cla
 News
 ====
 June 7, 2013 - All known exception handling issues have been resolved.
-May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the [latest version](http://cilkplus.org/download#runtime-sources).
+May 7, 2013 - cilk\_for is now supported, including #pragma grainsize. The runtime was updated to the [latest version](http://cilkplus.org/download#runtime-sources).
 March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.
 
 <a name="try"></a>
@@ -18,7 +18,7 @@ _Note: Cilk Plus/LLVM does not yet support all of the Intel® Cilk™ Plus exten
 
 Most software and hardware requirements are the same as for [LLVM](http://llvm.org/docs/GettingStarted.html#requirements).  However, support is currently limited to 64 bit Linux and Mac OS X - see [status](#status) for details on supported configurations and known issues.
 
-CMake version 2.8.8 or greater is required to compile compiler-rt when using the recommended build process. Alternatively, it is also possible to use configure/make.
+CMake *version 2.8.8 or greater* is required to compile compiler-rt when using the recommended build process. Alternatively, it is also possible to use configure/make by following the directions at http://clang.llvm.org/get_started.html.
 
 ### Getting the source code
 
