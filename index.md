@@ -62,9 +62,9 @@ export LIBRARY_PATH=/install/prefix/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/install/prefix/lib:$LD_LIBRARY_PATH
 ```
 
-When you build a program that uses Intel® Cilk™ Plus extensions, add the following options to enable Cilk Plus support and link to the runtime library.
+When you build a program that uses Intel® Cilk™ Plus extensions, add the following option to enable Cilk Plus support and link to the runtime library.
 ```
--fcilkplus -lcilkrts
+-fcilkplus
 ```
 
 ### A simple program

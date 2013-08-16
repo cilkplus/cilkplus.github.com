@@ -104,9 +104,9 @@ export LIBRARY_PATH=/install/prefix/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/install/prefix/lib:$LD_LIBRARY_PATH
 </code></pre>
 
-<p>When you build a program that uses Intel® Cilk™ Plus extensions, add the following options to enable Cilk Plus support and link to the runtime library.</p>
+<p>When you build a program that uses Intel® Cilk™ Plus extensions, add the following option to enable Cilk Plus support and link to the runtime library.</p>
 
-<pre><code>-fcilkplus -lcilkrts
+<pre><code>-fcilkplus
 </code></pre>
 
 <h3>A simple program</h3>
@@ -150,10 +150,11 @@ $ CILK_NWORKERS=4 time ./test
 <h3>What works right now</h3>
 
 <table>
-<tr>
+<thead><tr>
 <th>Feature</th>
 <th align="center">Supported?</th>
-</tr>
+</tr></thead>
+<tbody>
 <tr>
 <td>cilk_spawn, cilk_sync</td>
 <td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
@@ -178,6 +179,7 @@ $ CILK_NWORKERS=4 time ./test
 <td>array notation</td>
 <td align="center"></td>
 </tr>
+</tbody>
 </table><h3>Supported platforms</h3>
 
 <p>OS: Linux or Mac OS X<br>
