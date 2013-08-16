@@ -88,7 +88,7 @@ $ make &amp;&amp; make install
 
 <p><em>Mac OS X</em></p>
 
-<p>The basic steps are the same as above.  However, on Max OS X it is recommanded to build with the Clang compiler shipped with the OS.  Add the following definitions to the cmake command above.</p>
+<p>The basic steps are the same as above.  However, on Mac OS X it is recommended to build with the Clang compiler shipped with the OS.  Add the following definitions to the cmake command above.</p>
 
 <pre><code>-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 </code></pre>
@@ -132,7 +132,7 @@ int main() {
 
 <p>Confirm that the compiler is working correctly by saving the above code code to a file.</p>
 
-<pre><code>$ clang -fcilkplus test.c -o test -lcilkrts
+<pre><code>$ clang -fcilkplus test.c -o test
 $ ./test
 </code></pre>
 
