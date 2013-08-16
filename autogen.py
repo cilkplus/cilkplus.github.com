@@ -17,7 +17,7 @@ with open(name + '.md', 'r') as md_file, \
 
   data = {"text": md_file.read(), "mode": "gfm"}
 
-  p = subprocess.Popen(['curl', '-s', '--data-binary', '@-','-H', '"Content-Type: text/plain"', 'https://api.github.com/markdown'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  p = subprocess.Popen(['curl', '-s', '--data-binary', '@-', 'https://api.github.com/markdown'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   out, err = p.communicate(json.dumps(data))
 
   if p.returncode != 0:
