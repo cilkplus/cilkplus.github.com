@@ -50,10 +50,9 @@
 
 <h1>News</h1>
 
-<p>October 9, 2013 - SIMD for loop and elemental function are supported.<br>
+<p>October 9, 2013 - #pragma simd and SIMD-enabled functions are now supported.<br>
 June 7, 2013 - All known exception handling issues have been resolved.<br>
-May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the <a href="http://cilkplus.org/download#runtime-sources">latest version</a>.<br>
-March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.</p>
+May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the <a href="http://cilkplus.org/download#runtime-sources">latest version</a>.</p>
 
 <p><a name="try"></a></p>
 
@@ -173,7 +172,7 @@ $ CILK_NWORKERS=4 time ./test
 <td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
 </tr>
 <tr>
-<td>elemental functions</td>
+<td>simd-enabled functions</td>
 <td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
 </tr>
 <tr>
@@ -181,17 +180,17 @@ $ CILK_NWORKERS=4 time ./test
 <td align="center"></td>
 </tr>
 </tbody>
-</table><h3>Supported platforms</h3>
+</table><h3>Known issues</h3>
+
+<ul>
+<li>SIMD-enabled functions and #pragma simd loops are currently not well-vectorized by LLVM.</li>
+<li>Using variable-length arrays in a spawning function does not work yet.</li>
+</ul><h3>Supported platforms</h3>
 
 <p>OS: Linux or Mac OS X<br>
 Architecture: x86-64</p>
 
-<h3>Known issues</h3>
-
-<ul>
-<li>Using variable-length arrays in a spawning function does not work yet.</li>
-<li>Elemental functions or SIMD for loops are currently not well-vectorized by LLVM.</li>
-</ul><p><a name="license"></a></p>
+<p><a name="license"></a></p>
 
 <h1>License</h1>
 
@@ -203,9 +202,7 @@ Architecture: x86-64</p>
 
 <h1>Contact</h1>
 
-<p>If you would like to report a bug, or make a feature request, you can submit an issue in Github <a href="https://github.com/cilkplus/clang/issues">here</a>.</p>
-
-<p>You can also contact us via the the <a href="http://software.intel.com/en-us/forums/intel-cilk-plus/">Intel Cilk Plus forum</a> on the Intel Developer Zone.</p>      </div>
+<p>If you would like to report a bug, or make a feature request, you can submit an issue in Github <a href="https://github.com/cilkplus/clang/issues">here</a>.</p>      </div>
     </div>
 
     <!-- FOOTER  -->
