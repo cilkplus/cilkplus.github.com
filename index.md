@@ -4,6 +4,7 @@ This project implements the Intel® Cilk™ Plus language extensions in the [Cla
 
 News
 ====
+October 9, 2013 - SIMD for loop and elemental function are supported.
 June 7, 2013 - All known exception handling issues have been resolved.
 May 7, 2013 - cilk\_for is now supported, including #pragma grainsize. The runtime was updated to the [latest version](http://cilkplus.org/download#runtime-sources).
 March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.
@@ -117,9 +118,9 @@ Status
 | cilk\_spawn, cilk\_sync | ![check]      |
 | cilk\_for               | ![check]      |
 | hyperobjects            | ![check]      |
-| #pragma simd            |               | 
-| elemental functions     |               | 
-| array notation          |               | 
+| #pragma simd            | ![check]      |
+| elemental functions     | ![check]      |
+| array notation          |               |
 
 ### Supported platforms
 
@@ -128,6 +129,7 @@ Architecture: x86-64
 
 ### Known issues
 
+* Elemental functions or SIMD for loops are currently not well-vectorized by LLVM.
 * Using variable-length arrays in a spawning function does not work yet.
 
 <a name="license"></a>

@@ -50,7 +50,8 @@
 
 <h1>News</h1>
 
-<p>June 7, 2013 - All known exception handling issues have been resolved.<br>
+<p>October 9, 2013 - SIMD for loop and elemental function are supported.<br>
+June 7, 2013 - All known exception handling issues have been resolved.<br>
 May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtime was updated to the <a href="http://cilkplus.org/download#runtime-sources">latest version</a>.<br>
 March 26, 2013 - Autoconf/Make build is now supported. The known issue regarding exceptions in initializers is resolved.</p>
 
@@ -169,11 +170,11 @@ $ CILK_NWORKERS=4 time ./test
 </tr>
 <tr>
 <td>#pragma simd</td>
-<td align="center"></td>
+<td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
 </tr>
 <tr>
 <td>elemental functions</td>
-<td align="center"></td>
+<td align="center"><a href="images/green_check.png" target="_blank"><img src="images/green_check.png" alt="check" title="Yes" style="max-width:100%;"></a></td>
 </tr>
 <tr>
 <td>array notation</td>
@@ -189,6 +190,7 @@ Architecture: x86-64</p>
 
 <ul>
 <li>Using variable-length arrays in a spawning function does not work yet.</li>
+<li>Elemental functions or SIMD for loops are currently not well-vectorized by LLVM.</li>
 </ul><p><a name="license"></a></p>
 
 <h1>License</h1>
