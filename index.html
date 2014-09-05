@@ -50,7 +50,8 @@
 
 <h1>News</h1>
 
-<p>June 26, 2014 - re-base to Clang 3.4 done;<br>
+<p>September 05, 2014 – CilkPlus runtime is building directly from CilkPlus runtime site;<br>
+June 26, 2014 - re-base to Clang 3.4 done;<br>
 Extended Array Notation is fully supported now;<br>
 Some bugs fixed.<br>
 October 9, 2013 - #pragma simd and SIMD-enabled functions are now supported.<br>
@@ -71,7 +72,8 @@ May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtim
 
 <h3>Getting the source code</h3>
 
-<pre><code>$ git clone -b cilkplus https://github.com/cilkplus/llvm
+<pre><code>$ cd where-you-want-llvm-to-live
+$ git clone -b cilkplus https://github.com/cilkplus/llvm
 $ git clone -b cilkplus https://github.com/cilkplus/clang llvm/tools/clang
 $ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/compiler-rt
 </code></pre>
@@ -88,6 +90,8 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
         -DLLVM_TARGETS_TO_BUILD=X86 ..
 $ make &amp;&amp; make install
 </code></pre>
+<p>Attention: To run (rather than just compile) code you need to get and build an Intel Cilk Runtime.<br>
+Alternatively you can use a new script where-you-want-llvm-to-live/llvm/build.sh. This script intends to help you to config and build the whole stuff related to the compiler.</p>
 
 <p><em>Mac OS X</em></p>
 
@@ -187,7 +191,6 @@ $ CILK_NWORKERS=4 time ./test
 
 <ul>
 <li>SIMD-enabled functions and #pragma simd loops are currently not well-vectorized by LLVM.</li>
-<li>Using variable-length arrays in a spawning function does not work yet.</li>
 </ul><h3>Supported platforms</h3>
 
 <p>OS: Linux or Mac OS X<br>
