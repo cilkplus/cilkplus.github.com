@@ -78,7 +78,7 @@ May 7, 2013 - cilk_for is now supported, including #pragma grainsize. The runtim
 <h3>Getting the source code</h3>
 
 <pre><code>$ cd where-you-want-llvm-to-live
-$ git clone -b cilkplus https://github.com/cilkplus/llvm
+$ git clone -b cilkplus https://github.com/cilkplus/llvm llvm
 $ git clone -b cilkplus https://github.com/cilkplus/clang llvm/tools/clang
 $ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/compiler-rt
 </code></pre>
@@ -91,7 +91,7 @@ $ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/co
 
 <pre><code>$ cd llvm
 $ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
+$ cmake -G "Unix Makefiles" -DINTEL_SPECIFIC_CILKPLUS=1 --DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
         -DLLVM_TARGETS_TO_BUILD=X86 ..
 $ make &amp;&amp; make install
 </code></pre>
