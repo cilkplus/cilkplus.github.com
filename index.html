@@ -105,6 +105,12 @@ Alternatively you can use new scripts where-you-want-llvm-to-live/llvm/build-[li
 <pre><code>-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 </code></pre>
 
+<p><em>Windows</em></p>
+Follow instructions described on Clang web site:
+<li>Use something like -G "Visual Studio 12" to generate MS Studio project files</li>
+<li>Use Studio to open file "LLVM.sln" and build project "clang"</li>
+Attention: this is preliminary solution for Windows and it will be updated soon.
+
 <h3><a name="downloading"></a>Downloading</h3>
 
 <p>Instead of building from sources you're able simply to download the precompiled image of our compiler related to your OS: <a href="binaries/archive-linux.tar.gz">Linux</a> or <a href="binaries/archive-mac.tar.gz">Mac</a>.<br>
