@@ -206,6 +206,7 @@ $ CILK_NWORKERS=4 time ./test
 
 <ul>
 <li>SIMD-enabled functions and #pragma simd loops are currently not well-vectorized by LLVM.</li>
+<li>Cilk_spawn and Windows EH can't be mixed inside one function</li>
 </ul><h3>Supported platforms</h3>
 
 <p>OS: Linux, Windows or OS X<br>
