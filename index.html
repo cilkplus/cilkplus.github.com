@@ -95,6 +95,7 @@ $ cmake -G "Unix Makefiles" -DINTEL_SPECIFIC_CILKPLUS=1 --DCMAKE_INSTALL_PREFIX=
         -DLLVM_TARGETS_TO_BUILD=X86 ..
 $ make &amp;&amp; make install
 </code></pre>
+<p>The most important thing here is -DINTEL_SPECIFIC_CILKPLUS=1. Without this define you won't be able to build anything (later we'll change it).</p>
 <p>Attention: To run (rather than just compile) code you need to get and build an <a href="https://intelcilkruntime@bitbucket.org/intelcilkruntime/intel-cilk-runtime">Intel Cilk Runtime</a>.<br>
 Alternatively you can use new scripts where-you-want-llvm-to-live/llvm/build-[linux|mac].sh. These scripts intend to help you to configure and build the whole stuff related to the compiler on your OS.</p>
 
@@ -114,6 +115,7 @@ Attention: this is preliminary solution for Windows and it will be updated soon.
 <h3><a name="downloading"></a>Downloading</h3>
 
 <p>Instead of building from sources you're able simply to download the precompiled image of our compiler related to your OS: <a href="binaries/archive-linux.tar.gz">Linux</a> or <a href="binaries/archive-mac.tar.gz">Mac</a>.<br>
+<p>Attention: these images were not updated for the latest sources. We're planning to updatem the images soon and to add Windows image as well.</p>
 
 <h3>Using</h3>
 
