@@ -50,7 +50,10 @@
 
 <h1>News</h1>
 
-<p>December 29, 2015 - Big new update, including:
+<p>February 4, 2016</p>
+<ul><li>Update to clang/llvm trunk (as of Feb 3 2015)</li>
+<li>CMake based build supported for both compiler and CilkPlus runtime (see _build.sh)</li>
+<p>December 29, 2015 - Big new update, including:</p>
 <ul><li>Update to clang/llvm trunk (as of Dec 2015)</li>
 <li>Windows support</li>
 <li>Miscalleneous bug fixes</li></ul>
@@ -96,8 +99,8 @@ $ cmake -G "Unix Makefiles" -DINTEL_SPECIFIC_CILKPLUS=1 --DCMAKE_INSTALL_PREFIX=
 $ make &amp;&amp; make install
 </code></pre>
 <p>The most important thing here is -DINTEL_SPECIFIC_CILKPLUS=1. Without this define you won't be able to build anything (later we'll change it).</p>
-<p>Attention: To run (rather than just compile) code you need to get and build an <a href="https://intelcilkruntime@bitbucket.org/intelcilkruntime/intel-cilk-runtime">Intel Cilk Runtime</a>.<br>
-Alternatively you can use new scripts where-you-want-llvm-to-live/llvm/build-[linux|mac].sh. These scripts intend to help you to configure and build the whole stuff related to the compiler on your OS.</p>
+<p>Attention: To run (rather than just compile) code you need to get or build an <a href="https://intelcilkruntime@bitbucket.org/intelcilkruntime/intel-cilk-runtime">Intel Cilk Runtime</a>.<br>
+You can build the runtime using our new script where-you-want-llvm-to-live/llvm/_build.sh. This script intends to help you to configure and build the whole stuff related to the compiler on Linux.</p>
 
 <p><em>Mac OS X</em></p>
 
