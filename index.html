@@ -94,7 +94,7 @@ $ git clone -b cilkplus https://github.com/cilkplus/compiler-rt llvm/projects/co
 
 <pre><code>$ cd llvm
 $ mkdir build &amp;&amp; cd build
-$ cmake -G "Unix Makefiles" -DINTEL_SPECIFIC_CILKPLUS=1 --DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
+$ cmake -G "Unix Makefiles" -DINTEL_SPECIFIC_CILKPLUS=1 -DCMAKE_INSTALL_PREFIX=/install/prefix -DCMAKE_BUILD_TYPE=Release \
         -DLLVM_TARGETS_TO_BUILD=X86 ..
 $ make &amp;&amp; make install
 </code></pre>
